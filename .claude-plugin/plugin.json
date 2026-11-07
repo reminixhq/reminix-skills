@@ -1,0 +1,11 @@
+{
+  "name": "reminix",
+  "description": "Use when working with Reminix (reminix.com): reading or changing a workspace in Reminix, from a chat app such as Claude or ChatGPT through its MCP tools, from a terminal through the `reminix` CLI or through its API. Covers signing in, choosing the workspace, every operation, approvals and errors.",
+  "author": {
+    "name": "Reminix",
+    "url": "https://reminix.com"
+  },
+  "homepage": "https://reminix.com/docs/agents/",
+  "privacyPolicyUrl": "https://reminix.com/privacy/",
+  "termsOfServiceUrl": "https://reminix.com/terms/"
+}

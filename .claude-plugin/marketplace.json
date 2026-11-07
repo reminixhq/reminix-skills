@@ -1,0 +1,14 @@
+{
+  "name": "reminix-skills",
+  "description": "Reminix's agent skill and MCP server for Claude Code.",
+  "owner": {
+    "name": "Reminix"
+  },
+  "plugins": [
+    {
+      "name": "reminix",
+      "source": "./",
+      "description": "Use when working with Reminix (reminix.com): reading or changing a workspace in Reminix, from a chat app such as Claude or ChatGPT through its MCP tools, from a terminal through the `reminix` CLI or through its API. Covers signing in, choosing the workspace, every operation, approvals and errors."
+    }
+  ]
+}
