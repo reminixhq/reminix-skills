@@ -75,8 +75,8 @@ through approvals; secrets are used by runs and never shown back.
 Two kinds of people use Reminix through an agent:
 
 - **People who run scripts** (support, operations, finance), usually in
-  a chat app such as Claude or ChatGPT: "Run the refund script for
-  order 1234." They don't see code. Every step for them works with
+  a chat app such as Claude or ChatGPT: "Refund $40 on order
+  A-10423." They don't see code. Every step for them works with
   the MCP tools alone; the CLI does the same from a terminal.
 - **People who publish scripts** (developers), usually in a coding
   agent with a terminal such as Claude Code or Codex: "Publish
