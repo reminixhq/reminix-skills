@@ -5,6 +5,7 @@
     "name": "Reminix",
     "url": "https://reminix.com"
   },
+  "license": "Apache-2.0",
   "homepage": "https://reminix.com/docs/agents/",
   "privacyPolicyUrl": "https://reminix.com/privacy/",
   "termsOfServiceUrl": "https://reminix.com/terms/"

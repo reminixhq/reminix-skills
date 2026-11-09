@@ -26,3 +26,7 @@ Claude Code, as a plugin with Reminix's MCP server:
 In Claude or ChatGPT, download [the skill](https://reminix.com/docs/skill/reminix.zip) and add it in the Skills section of the settings. More: [Build with AI agents](https://reminix.com/docs/agents/).
 
 This repository is written by Reminix's release process; changes made here are replaced. Report a problem in an issue.
+
+## License
+
+Licensed under the Apache License 2.0.
