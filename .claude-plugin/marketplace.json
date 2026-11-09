@@ -8,7 +8,18 @@
     {
       "name": "reminix",
       "source": "./",
-      "description": "Use when working with Reminix (reminix.com): reading or changing a workspace in Reminix, from a chat app such as Claude or ChatGPT through its MCP tools, from a terminal through the `reminix` CLI or through its API. Covers signing in, choosing the workspace, every operation, approvals and errors."
+      "description": "Use when working with Reminix (reminix.com): reading or changing a workspace in Reminix, from a chat app such as Claude or ChatGPT through its MCP tools, from a terminal through the `reminix` CLI or through its API. Covers signing in, choosing the workspace, every operation, approvals and errors.",
+      "keywords": [
+        "scripts",
+        "internal-tools",
+        "automation",
+        "ai-agents",
+        "mcp",
+        "agent-skills",
+        "claude-code",
+        "claude-code-plugin",
+        "codex"
+      ]
     }
   ]
 }

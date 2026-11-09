@@ -6,6 +6,17 @@
     "url": "https://reminix.com"
   },
   "license": "Apache-2.0",
+  "keywords": [
+    "scripts",
+    "internal-tools",
+    "automation",
+    "ai-agents",
+    "mcp",
+    "agent-skills",
+    "claude-code",
+    "claude-code-plugin",
+    "codex"
+  ],
   "homepage": "https://reminix.com/docs/agents/",
   "privacyPolicyUrl": "https://reminix.com/privacy/",
   "termsOfServiceUrl": "https://reminix.com/terms/"
