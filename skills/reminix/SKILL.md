@@ -209,6 +209,11 @@ To publish a script from the person's repository:
    word; `$`, `|`, `>`, `*` are ordinary characters (for a pipeline,
    write `sh -c '…'` or use a `.sh` file). The first word is the program
    (`python`, `node`, `sh`, `./tool`).
+   - Never put `{name}` inside inline code (`sh -c`, `python -c`,
+     `node -e`, `perl -e`, `ruby -e`, `php -r`): publishing refuses it,
+     since the interpreter would run the value as code. Pass it as its
+     own argument: `sh -c 'echo "$1"' _ {name}`,
+     `python -c 'import sys; print(sys.argv[1])' {name}`.
    - `{name}` is an input. A word that is only `{name}` becomes one
      argument (one per item for a list, none for a true/false input);
      inside a word (`--month={month}`) the value is put in place.
