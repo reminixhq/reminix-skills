@@ -355,7 +355,7 @@ To call an API from a script, declare in `reminix.json`:
 (`hosts` may list a sandbox and a live host; `host` takes one).
 The code calls the API WITHOUT credentials (Python's `urllib` or
 `requests`, `curl`, Node's `fetch` all work unchanged): Reminix attaches
-them on the way out and the code never holds them. A request to any
+them on the way out and the code doesn't hold them. A request to any
 other host gets an HTTP 403 at once, whose body says why. Use `"envVars":
 ["NAME"]` (the value as the environment variable `NAME`) only when the
 person says the secret allows it (`allowEnvVar`).
