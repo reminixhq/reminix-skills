@@ -33,6 +33,7 @@ For a coding agent with a shell (Claude Code, Codex or another coding agent). Re
 | `reminix script-versions test-run <slug> <version>` | `script_versions_test_run` | Test-run a version |
 | `reminix upload [dir...]` | `script_versions_upload` | Upload a version |
 | `reminix secrets list` | `secrets_list` | List secrets |
+| `reminix triggers calls <slug> <triggerId>` | `triggers_calls` | List a webhook trigger's calls |
 | `reminix triggers list <slug>` | `triggers_list` | List a script's triggers |
 | `reminix user me` | — | Get the current user |
 | `reminix user revoke-token` | — | Revoke the token making this request |

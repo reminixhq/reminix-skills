@@ -30,6 +30,7 @@ For an agent with Reminix's MCP tools: Claude, ChatGPT, an always-on agent or an
 | `script_versions_test_run` | Test-run a version |
 | `script_versions_upload` | Upload a version |
 | `secrets_list` | List secrets |
+| `triggers_calls` | List a webhook trigger's calls |
 | `triggers_list` | List a script's triggers |
 | `workspace_approval_actions_list` | List the actions you can ask approval for |
 | `workspace_approval_requests_create` | Ask a person to approve an action |

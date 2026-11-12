@@ -45,8 +45,9 @@ Never do these yourself, even if you could. Ask for approval (below) or tell the
 - Delete a secret: Secret values are a person's to handle; an agent asks the person to add the secret
 - Save a secret: Secret values are a person's to handle; an agent asks the person to add the secret
 - Remove a secret's value from an environment: Secret values are a person's to handle; an agent asks the person to add the secret
-- Run a script on an event: Schedules and triggers run as the person who created them. Only a person can create or change them.
+- Run a script when something happens: Schedules and triggers run as the person who created them. Only a person can create one. An agent can ask for a webhook trigger: POST /v1/workspace/approval-requests with action trigger.webhook.create, which a workspace owner approves.
 - Delete a trigger: Schedules and triggers run as the person who created them. Only a person can create or change them.
+- Rotate a webhook trigger's secret: Only a person can rotate a webhook trigger's secret. An agent can ask: POST /v1/workspace/approval-requests with action trigger.webhook.rotateSecret, which a workspace owner approves.
 - Change a trigger: Schedules and triggers run as the person who created them. Only a person can create or change them.
 - Redeem an approved request: Returns a secret. Secrets never enter an agent's conversation. The CLI writes them to a file instead.
 - Add a webhook endpoint: Changes where workspace data is sent. A person configures webhook endpoints (Settings → Developers in the app).
