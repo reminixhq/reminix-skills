@@ -46,9 +46,9 @@ Never do these yourself, even if you could. Ask for approval (below) or tell the
 - Update a secret: Secret values are a person's to handle; an agent asks the person to add the secret
 - Remove a secret's value from an environment: Secret values are a person's to handle; an agent asks the person to add the secret
 - Save a secret's value: Secret values are a person's to handle; an agent asks the person to add the secret
-- Run a script when something happens: Schedules and triggers run as the person who created them. Only a person can create one. An agent can ask for a webhook trigger: POST /v1/workspace/approval-requests with action trigger.webhook.create, which a workspace owner approves.
+- Run a script when something happens: Schedules and triggers run as the person who created them. Only a person can create one. An agent can ask for a webhook trigger: POST /v1/workspace/approval-requests with action trigger.webhook.create, which a workspace owner or admin approves.
 - Delete a trigger: Schedules and triggers run as the person who created them. Only a person can create or change them.
-- Rotate a webhook trigger's secret: Only a person can rotate a webhook trigger's secret. An agent can ask: POST /v1/workspace/approval-requests with action trigger.webhook.rotateSecret, which a workspace owner approves.
+- Rotate a webhook trigger's secret: An agent can't rotate a webhook trigger's secret itself. It can ask: POST /v1/workspace/approval-requests with action trigger.webhook.rotateSecret, which a workspace owner or admin approves.
 - Change a trigger: Schedules and triggers run as the person who created them. Only a person can create or change them.
 - Redeem an approved request: Returns a secret. Secrets never enter an agent's conversation. The CLI writes them to a file instead.
 - Add a webhook endpoint: Changes where workspace data is sent. A person configures webhook endpoints (Settings → Developers in the app).
@@ -150,7 +150,7 @@ says so.
 
 - Recent runs of a script: `runs_list` with `script` (`reminix runs
 list --script <slug>`), newest first. Each shows who started it, how
-  (`via`: app, api, cli, agent, schedule or trigger), its status and when.
+  (`via`: app, api, cli, agent, schedule, trigger or webhook), its status and when.
 - One run: `runs_get` for its inputs, output, error and files;
   `runs_log` for what it printed while it ran.
 - Who changed what in the workspace: `workspace_audit_events_list`.
@@ -272,7 +272,7 @@ To publish a script from the person's repository:
 
 Over the API, "Upload a version" (`scriptVersions.upload`,
 `POST /v1/scripts/{slug}/versions`) takes `{ source,
-command?, install?, inputSchema?, outputSchema?, hosts?, secrets?, env?,
+command?, install?, inputSchema?, outputSchema?, hosts?, secrets?, envVars?,
 timeoutSeconds?, readme?, tags?, create?, name?, description?, publish? }`,
 where `source` is the folder as a base64 `.tar.gz`. Without `command`,
 Reminix works it out from the folder as `publish` does; without
@@ -396,5 +396,5 @@ at 8:00 on the 1st (`0 8 1 * *`) with no inputs, and an
 `alert-on-failure` script runs on `run.failed` filtered to
 `{"script.slug": "nightly-sync"}`, with inputs
 `{"runId": "{{event.data.runId}}", "error": "{{event.data.error}}"}`. You can list them: `schedules list`,
-`triggers list`. Runs they start show `via: "schedule"` or
-`"trigger"`; an agent's runs show `via: "agent"`.
+`triggers list`. Runs they start show `via: "schedule"`,
+`"trigger"` (an event trigger) or `"webhook"` (a webhook trigger); an agent's runs show `via: "agent"`.
