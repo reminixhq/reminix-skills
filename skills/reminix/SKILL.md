@@ -34,7 +34,7 @@ Never do these yourself, even if you could. Ask for approval (below) or tell the
 - Add an environment: Environments hold secret values and rules. A person sets them up, and an agent asks a person to.
 - Delete an environment: Environments hold secret values and rules. A person sets them up, and an agent asks a person to.
 - Change an environment: Environments hold secret values and rules. A person sets them up, and an agent asks a person to.
-- Download a file: Returns raw bytes; agents use the file's downloadUrl (files.get) instead.
+- Get a file's content: Returns raw bytes; agents use the file's downloadUrl (files.get) instead.
 - Upload a file: Takes raw bytes, which an agent's tool call can't carry; agents pass an https link as the file input instead.
 - Schedule a script: Schedules and triggers run as the person who created them. Only a person can create or change them.
 - Delete a schedule: Schedules and triggers run as the person who created them. Only a person can create or change them.
@@ -43,8 +43,9 @@ Never do these yourself, even if you could. Ask for approval (below) or tell the
 - Restore an archived script: Stopping a script the team relies on is a person's decision. An agent asks a person to.
 - Change the workspace's script settings: Governance settings are a person's to change; an agent must not loosen them
 - Delete a secret: Secret values are a person's to handle; an agent asks the person to add the secret
-- Save a secret: Secret values are a person's to handle; an agent asks the person to add the secret
+- Update a secret: Secret values are a person's to handle; an agent asks the person to add the secret
 - Remove a secret's value from an environment: Secret values are a person's to handle; an agent asks the person to add the secret
+- Save a secret's value: Secret values are a person's to handle; an agent asks the person to add the secret
 - Run a script when something happens: Schedules and triggers run as the person who created them. Only a person can create one. An agent can ask for a webhook trigger: POST /v1/workspace/approval-requests with action trigger.webhook.create, which a workspace owner approves.
 - Delete a trigger: Schedules and triggers run as the person who created them. Only a person can create or change them.
 - Rotate a webhook trigger's secret: Only a person can rotate a webhook trigger's secret. An agent can ask: POST /v1/workspace/approval-requests with action trigger.webhook.rotateSecret, which a workspace owner approves.
@@ -108,7 +109,8 @@ Ask which one you're helping when the request doesn't make it clear.
    at once.
 3. **Run it:** the script's own tool (named after it:
    `refund-customer` → `refund_customer`), or `runs_create` with
-   `{ "inputs": {…} }` (`reminix run <slug> --input '<json>'`). A 400
+   `{ "inputs": {…} }` (`reminix run <slug> -f <name>=<value>` for text, `-F <name>=<value>`
+   for a number, boolean or JSON, or `--input-file <path>`). A 400
    lists each wrong field in `details`: fix it from there.
 4. **Read the answer:**
    - finished: tell the person the result from `output` in plain
@@ -254,7 +256,7 @@ To publish a script from the person's repository:
    `node_modules`, `.venv`, `venv`, `__pycache__`, `.deps`, `.git`,
    `.env`; at most 10 MB packed) and uploads a DRAFT version. Always
    `upload`: `reminix publish` also publishes — makes the version the
-   one runs use. Then `reminix run <slug> --number <version> --input '<json>' --log`
+   one runs use. Then `reminix run <slug> --number <version> -F <name>=<value> --log`
    (`--number`, since `--version` prints the CLI's version)
    test-runs it with realistic inputs (a test run: it counts toward the
    month's runs, but starts no triggers). Fix and re-upload until it
@@ -300,7 +302,7 @@ the person publishes another.
    names the latest version; `script-versions list <slug>` lists them).
 2. Change it, `reminix upload <folder>` (a draft), and test-run the
    draft with realistic inputs (`reminix run <slug> --number <version>
---input '<json>' --log`).
+-F <name>=<value> --log`).
 3. Show the person what changed and the test run's output, and ask
    them to publish it. Never publish on your own.
 

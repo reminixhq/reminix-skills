@@ -19,18 +19,22 @@ For an agent with Reminix's MCP tools: Claude, ChatGPT, an always-on agent or an
 | `runs_get` | Get a run |
 | `runs_list` | List runs |
 | `runs_log` | Get a run's log |
+| `schedules_get` | Get a schedule |
 | `schedules_list` | List a script's schedules |
 | `scripts_create` | Create a script |
 | `scripts_get` | Get a script |
 | `scripts_list` | List scripts |
 | `scripts_update` | Change a script |
 | `script_settings_get` | Get the workspace's script settings |
+| `script_versions_get` | Get a version |
 | `script_versions_list` | List a script's versions |
 | `script_versions_publish` | Publish a version |
 | `script_versions_test_run` | Test-run a version |
 | `script_versions_upload` | Upload a version |
+| `secrets_get` | Get a secret |
 | `secrets_list` | List secrets |
-| `triggers_calls` | List a webhook trigger's calls |
+| `trigger_calls_list` | List a webhook trigger's calls |
+| `triggers_get` | Get a trigger |
 | `triggers_list` | List a script's triggers |
 | `workspace_approval_actions_list` | List the actions you can ask approval for |
 | `workspace_approval_requests_create` | Ask a person to approve an action |
@@ -40,8 +44,8 @@ For an agent with Reminix's MCP tools: Claude, ChatGPT, an always-on agent or an
 | `workspace_get` | Get the current workspace |
 | `workspace_invitations_list` | List pending invitations |
 | `workspace_members_list` | List workspace members |
+| `workspace_plan_usage_get` | Get your plan's usage this period |
 | `workspace_teams_list` | List teams |
-| `workspace_usage` | Get your plan's usage this period |
 | `workspace_webhook_deliveries_list` | List an endpoint's deliveries |
 | `workspace_webhook_deliveries_redeliver` | Redeliver an event |
 | `workspace_webhook_endpoints_get` | Get a webhook endpoint |
